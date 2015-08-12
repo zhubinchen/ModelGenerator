@@ -12,6 +12,8 @@
 
 + (instancetype)sharedGenerator;
 
-- (NSString*)generateModelFromDictionary:(NSDictionary*)dic;
+- (NSAttributedString*)generateModelFromDictionary:(NSDictionary*)dic;
+
+- (NSAttributedString*)generateModelFromDictionary:(NSDictionary*)dic withBlock:(NSString*(^)(id unresolvedObject))block;
 
 @end

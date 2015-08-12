@@ -769,11 +769,96 @@
                     <connections>
                         <outlet property="codeTextView" destination="Ysi-iN-v9F" id="iv0-al-lS6"/>
                         <outlet property="jsonTextView" destination="p7Q-IO-h2F" id="dDi-y8-vsf"/>
+                        <segue destination="twm-gx-gS2" kind="popover" identifier="showModal" popoverAnchorView="2RJ-6J-dX1" popoverBehavior="t" preferredEdge="maxY" id="hKU-Qi-656"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137" y="669.5"/>
+        </scene>
+        <!--Resolve Class View Controller-->
+        <scene sceneID="Bm8-w6-aBz">
+            <objects>
+                <viewController showSeguePresentationStyle="single" id="twm-gx-gS2" customClass="ResolveClassViewController" sceneMemberID="viewController">
+                    <view key="view" id="DuC-HG-AX7">
+                        <rect key="frame" x="0.0" y="0.0" width="248" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuC-1N-7O8">
+                                <rect key="frame" x="0.0" y="0.0" width="248" height="229"/>
+                                <clipView key="contentView" id="kiP-6K-V4N">
+                                    <rect key="frame" x="1" y="1" width="223" height="133"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Qpl-8a-8Xr">
+                                            <rect key="frame" x="0.0" y="0.0" width="236" height="133"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="231" height="227"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="231" height="227"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="1XL-UT-yYF">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="fOR-ux-u6a">
+                                    <rect key="frame" x="224" y="1" width="15" height="133"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FGn-lD-mF4">
+                                <rect key="frame" x="6" y="237" width="181" height="25"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="输入下面的属性对应的类名" drawsBackground="YES" id="31y-Yk-xIZ">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I8G-rS-2DU">
+                                <rect key="frame" x="189" y="230" width="65" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="CPh-NB-uan"/>
+                                    <constraint firstAttribute="height" constant="25" id="g3D-Pa-qMe"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ufb-si-K8E">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="resolve:" target="twm-gx-gS2" id="HqK-w5-Vhf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="CuC-1N-7O8" firstAttribute="top" secondItem="I8G-rS-2DU" secondAttribute="bottom" constant="8" id="3ZV-l8-gHG"/>
+                            <constraint firstAttribute="trailing" secondItem="I8G-rS-2DU" secondAttribute="trailing" id="4rC-4g-SfR"/>
+                            <constraint firstItem="I8G-rS-2DU" firstAttribute="bottom" secondItem="FGn-lD-mF4" secondAttribute="bottom" id="6uC-QF-UR1"/>
+                            <constraint firstAttribute="bottom" secondItem="CuC-1N-7O8" secondAttribute="bottom" id="M3k-2p-B6C"/>
+                            <constraint firstAttribute="trailing" secondItem="CuC-1N-7O8" secondAttribute="trailing" id="OR6-3w-muT"/>
+                            <constraint firstItem="I8G-rS-2DU" firstAttribute="leading" secondItem="FGn-lD-mF4" secondAttribute="trailing" constant="8" id="RiD-Ag-IYn"/>
+                            <constraint firstItem="FGn-lD-mF4" firstAttribute="top" secondItem="DuC-HG-AX7" secondAttribute="top" constant="8" id="Uqo-lR-aHH"/>
+                            <constraint firstItem="CuC-1N-7O8" firstAttribute="leading" secondItem="DuC-HG-AX7" secondAttribute="leading" id="cE3-mi-azc"/>
+                            <constraint firstItem="FGn-lD-mF4" firstAttribute="leading" secondItem="DuC-HG-AX7" secondAttribute="leading" constant="6" id="qNx-gd-IcC"/>
+                            <constraint firstItem="I8G-rS-2DU" firstAttribute="top" secondItem="DuC-HG-AX7" secondAttribute="top" constant="8" id="r1l-Hn-Y2F"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="classTextField" destination="FGn-lD-mF4" id="Tpd-en-y5p"/>
+                        <outlet property="textView" destination="Qpl-8a-8Xr" id="K8h-4d-Xxu"/>
+                    </connections>
+                </viewController>
+                <customObject id="McB-TZ-mTG" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668" y="670"/>
         </scene>
     </scenes>
 </document>
