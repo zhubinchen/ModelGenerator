@@ -30,6 +30,7 @@
 /* Begin PBXFileReference section */
 		075150C51B7B14BE0078138B /* ResolveClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResolveClassViewController.h; sourceTree = "<group>"; };
 		075150C61B7B14BE0078138B /* ResolveClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResolveClassViewController.m; sourceTree = "<group>"; };
+		075150ED1B7C94070078138B /* Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Template.h; sourceTree = "<group>"; };
 		07A304111B79B1DC00B0CA47 /* ModelGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModelGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A304151B79B1DC00B0CA47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A304161B79B1DC00B0CA47 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 			children = (
 				07A304161B79B1DC00B0CA47 /* AppDelegate.h */,
 				07A304171B79B1DC00B0CA47 /* AppDelegate.m */,
+				075150ED1B7C94070078138B /* Template.h */,
 				07A304371B79B1ED00B0CA47 /* ModelGenerator.h */,
 				07A304381B79B1ED00B0CA47 /* ModelGenerator.m */,
 				07A3041B1B79B1DC00B0CA47 /* ViewController.h */,

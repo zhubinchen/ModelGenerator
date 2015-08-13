@@ -8,12 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum : NSUInteger {
+    ObjectiveC,
+    Swift,
+    Java,
+    CPP,
+} Language;
+
 @interface ModelGenerator : NSObject
+
+@property (nonatomic,assign) Language language;
+
+@property (nonatomic,strong) NSString *className;
 
 + (instancetype)sharedGenerator;
 
-- (NSAttributedString*)generateModelFromDictionary:(NSDictionary*)dic;
-
-- (NSAttributedString*)generateModelFromDictionary:(NSDictionary*)dic withBlock:(NSString*(^)(id unresolvedObject))block;
+- (NSString*)generateModelFromDictionary:(NSDictionary*)dic withBlock:(NSString*(^)(id unresolvedObject))block;
 
 @end

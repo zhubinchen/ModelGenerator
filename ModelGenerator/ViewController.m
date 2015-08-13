@@ -10,21 +10,24 @@
 #import "ModelGenerator.h"
 #import "ResolveClassViewController.h"
 
-@interface ViewController ()<ResolveClassViewControllerDelegate>
+@interface ViewController ()<ResolveClassViewControllerDelegate,NSComboBoxDataSource>
 
 @end
 
 @implementation ViewController
 {
     ModelGenerator *generater;
-    NSString *currentStrToResolve;
+    id objectToResolve;
     NSString *result;
+    NSArray *languageArray;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.preferredContentSize = CGSizeMake(700, 400);
     generater = [ModelGenerator sharedGenerator];
+    
+    languageArray = @[@"Objective-C",@"Swift",@"Java",@"C++"];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -32,6 +35,8 @@
 }
 
 - (IBAction)generate:(id)sender {
+    NSLog(@"%@",_classNameField.stringValue);
+    generater.className = _classNameField.stringValue;
     NSError *error = nil;
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[_jsonTextView.textStorage.string dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
     if (error) {
@@ -46,9 +51,9 @@
     [self.codeTextView insertText:@"" replacementRange:NSMakeRange(0, self.codeTextView.textStorage.string.length)];
     
     dispatch_async(dispatch_queue_create("generate", DISPATCH_QUEUE_CONCURRENT), ^{
-        NSAttributedString *code = [generater generateModelFromDictionary:dic withBlock:^NSString *(id unresolvedObject) {
+        NSString *code = [generater generateModelFromDictionary:dic withBlock:^NSString *(id unresolvedObject) {
 
-            currentStrToResolve = [unresolvedObject description];
+            objectToResolve = unresolvedObject;
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self performSegueWithIdentifier:@"showModal" sender:self];
@@ -69,18 +74,36 @@
     });
 }
 
+- (IBAction)selectedLanguage:(NSComboBox*)sender {
+    generater.language = sender.indexOfSelectedItem;
+}
+
 - (void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"showModal"]) {
         ResolveClassViewController *vc = segue.destinationController;
-        vc.strToResolve = currentStrToResolve;
+        vc.objectToResolve = objectToResolve;
         vc.delegate = self;
     }
 }
 
+#pragma ResolveClassViewControllerDelegate
+
 - (void)didResolvedWithClassName:(NSString *)name
 {
     result = name;
+}
+
+#pragma NSComboBoxDelegate & NSComboBoxDataSource
+
+- (NSInteger)numberOfItemsInComboBox:(NSComboBox *)aComboBox
+{
+    return languageArray.count;
+}
+
+- (id)comboBox:(NSComboBox *)aComboBox objectValueForItemAtIndex:(NSInteger)index
+{
+    return languageArray[index];
 }
 
 @end

@@ -14,7 +14,7 @@
 {
     [super viewDidLoad];
     self.preferredContentSize = CGSizeMake(250, 300);
-    [self.textView insertText:_strToResolve];
+    [self.textView insertText:[_objectToResolve description]];
 }
 
 - (IBAction)resolve:(id)sender {

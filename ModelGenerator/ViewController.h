@@ -8,13 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
+@interface ViewController : NSViewController 
 
 @property (unsafe_unretained) IBOutlet NSTextView *codeTextView;
 
 @property (unsafe_unretained) IBOutlet NSTextView *jsonTextView;
 
+@property (weak) IBOutlet NSTextField *classNameField;
+
 - (IBAction)generate:(id)sender;
+
+- (IBAction)selectedLanguage:(id)sender;
 
 @end
 

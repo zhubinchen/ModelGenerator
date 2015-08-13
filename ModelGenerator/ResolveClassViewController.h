@@ -18,7 +18,7 @@
 
 @property (nonatomic,weak) id<ResolveClassViewControllerDelegate> delegate;
 
-@property (nonatomic,strong) NSString *strToResolve;
+@property (nonatomic,strong) id objectToResolve;
 
 @property (unsafe_unretained) IBOutlet NSTextView *textView;
 
