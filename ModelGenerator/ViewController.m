@@ -35,7 +35,7 @@
 }
 
 - (IBAction)generate:(id)sender {
-    NSLog(@"%@",_classNameField.stringValue);
+//    NSLog(@"%@",_classNameField.stringValue);
     generater.className = _classNameField.stringValue;
     NSError *error = nil;
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[_jsonTextView.textStorage.string dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
@@ -91,6 +91,9 @@
 
 - (void)didResolvedWithClassName:(NSString *)name
 {
+    if (generater.language == ObjectiveC && ![name hasSuffix:@"*"]) {
+        name = [name stringByAppendingString:@"*"];
+    }
     result = name;
 }
 

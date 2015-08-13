@@ -18,7 +18,6 @@
 }
 
 - (IBAction)resolve:(id)sender {
-
     if (_classTextField.currentEditor.string.length) {
         [self.delegate didResolvedWithClassName:_classTextField.currentEditor.string];
         [self dismissViewController:self];

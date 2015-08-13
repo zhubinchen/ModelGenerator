@@ -10,7 +10,7 @@
 #define ModelGenerator_Template_h
 
 #define kObjcClassFormat @"@interface %@ : NSObject\n%@\n@end"
-#define kObjcPropertyFormat @"\n@property (nonatomic,strong) %@ *%@;\n"
+#define kObjcPropertyFormat @"\n@property (nonatomic,%@) %@ %@;\n"
 
 #define kSwiftClassFormat @"class %@: NSObject {\n%@\n}"
 #define kSwiftPropertyFormat @"\n\tvar %@: %@?\n"

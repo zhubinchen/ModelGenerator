@@ -15,12 +15,17 @@ static ModelGenerator *generator = nil;
 
 @interface ModelGenerator ()
 
+@property (nonatomic,strong) NSArray *objcTypeArray;
+@property (nonatomic,strong) NSArray *swiftTypeArray;
+@property (nonatomic,strong) NSArray *javaTypeArray;
+@property (nonatomic,strong) NSArray *cppTypeArray;
+
 @property (nonatomic,strong) NSMutableArray *properties;
 
 @property (nonatomic,copy) NSString*(^block)(id unResolvedObject) ;
 
 @end
-
+//*{"registPhone":1565268.4654,"area":"false","serverSerialNo":"null","password":"123456","nickName":"null","phoneModel":"iPhone Simulator","registerTime":"null","country":"null","updateTime":"null","phoneOs":"iPhone OS8.4","serialNo":1}/
 
 @implementation ModelGenerator
 
@@ -30,6 +35,10 @@ static ModelGenerator *generator = nil;
     dispatch_once(&onceToken, ^{
         generator = [[ModelGenerator alloc]init];
         generator.language = ObjectiveC;
+        generator.objcTypeArray = @[@"NSString*",@"NSInteger",@"CGFloat",@"NSInteger",@"CGFloat",@"BOOL"];
+        generator.swiftTypeArray = @[@"NSString",@"NSInteger",@"CGFloat",@"NSInteger",@"CGFloat",@"BOOL"];
+        generator.javaTypeArray = @[@"String",@"Int",@"Float",@"Double",@"Double",@"Boolean"];
+        generator.cppTypeArray = @[@"std::string",@"int",@"float",@"long",@"double",@"bool"];
     });
     return generator;
 }
@@ -43,7 +52,8 @@ static ModelGenerator *generator = nil;
             NSMutableString *propertyDefins = [NSMutableString string];
             
             for (NSDictionary *dic in _properties) {
-                [propertyDefins appendFormat:kObjcPropertyFormat,dic[@"type"],dic[@"name"]];
+                NSString *s = ([dic[@"type"] isEqualToString:@"NSInteger"] || [dic[@"type"] isEqualToString:@"CGFloat"]) ? @"assign" : @"strong";
+                [propertyDefins appendFormat:kObjcPropertyFormat,s,dic[@"type"],dic[@"name"]];
             }
             
             code = [NSMutableString stringWithFormat:kObjcClassFormat,_className,propertyDefins];
@@ -102,16 +112,16 @@ static ModelGenerator *generator = nil;
 {
     switch (language) {
         case ObjectiveC:
-            return type ? @"NSNumber" : @"NSString";
+            return _objcTypeArray[type];
             break;
         case Swift:
-            return type ? @"NSNumber" : @"NSString";
+            return _swiftTypeArray[type];
             break;
         case Java:
-            return type ? @"Int" : @"String";
+            return _javaTypeArray[type];
             break;
         case CPP:
-            return type ? @"int" : @"std::string";
+            return _cppTypeArray[type];
         default:
             return @"unknow";
     }
@@ -122,22 +132,41 @@ static ModelGenerator *generator = nil;
  *
  *  @param obj 要解析的对象
  *
- *  @return 0:字符串 1:数字 2:其它类型
+ *  @return 0:字符串 1:整数 2:浮点 3:长整数 4:双精度 5:布尔 6:其他
  */
 - (NSInteger)resolveClassOfObjet:(id)obj
 {
     if(obj == nil){
         return 0;
     }
+
     Class clazz = [obj class];
     NSString *name = NSStringFromClass(clazz);
     
     if ([name isEqualToString:@"__NSCFConstantString"]||[name isEqualToString:@"NSString"] || [name isEqualToString:@"__NSCFString"]) {
+        if ([obj respondsToSelector:@selector(isEqualToString:)] && ([obj isEqualToString:@"true"] || [obj isEqualToString:@"false"])) {
+            return 5;
+        }
         return 0;
     }else if ([name isEqualToString:@"__NSCFNumber"] || [name isEqualToString:@"NSNumber"]) {
+        if (strcmp([obj objCType], @encode(float)) == 0)
+        {
+            return 2;
+        }
+        else if (strcmp([obj objCType], @encode(double)) == 0)
+        {
+            return 4;
+        }
+        else if (strcmp([obj objCType], @encode(int)) == 0)
+        {
+            return 1;
+        } else if (strcmp([obj objCType], @encode(long)) == 0)
+        {
+            return 3;
+        }
         return 1;
     }else if ([name isEqualToString:@"NSDictionary"] || [name isEqualToString:@"__NSCFDictionary"]){
-        return 2;
+        return 6;
     }
     
     Class superClazz = class_getSuperclass(clazz);
@@ -164,7 +193,7 @@ static ModelGenerator *generator = nil;
         }
         
     }
-    
+//    {"registPhone":"15652684654","area":{"county":"CHN","province":"Beijing","city":"Beijing","code":0},"serverSerialNo":3.14,"password":"zbc123456","nickName":"zhubch","phoneModel":"iPhone Simulator","registerTime":"null","country":"null","updateTime":"null","phoneOs":"iPhone OS","osVersion":8.4,"serialNo":1}
     destChar[n] = '\0';
     NSString *destStr = [[NSString alloc]initWithUTF8String:destChar];
     
@@ -181,7 +210,7 @@ static ModelGenerator *generator = nil;
         NSInteger type = [self resolveClassOfObjet:obj];
         
         NSString *propertyType;
-        if (type == 2) {
+        if (type == 6) {
             propertyType = generator.block(obj);
         }else {
             propertyType = [self nameOfType:type InLanguage:generator.language];
