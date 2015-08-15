@@ -12,7 +12,7 @@ typedef enum : NSUInteger {
     ObjectiveC,
     Swift,
     Java,
-    CPP,
+    Unknow
 } Language;
 
 @interface ModelGenerator : NSObject

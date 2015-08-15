@@ -27,7 +27,7 @@
     self.preferredContentSize = CGSizeMake(700, 400);
     generater = [ModelGenerator sharedGenerator];
     
-    languageArray = @[@"Objective-C",@"Swift",@"Java",@"C++"];
+    languageArray = @[@"Objective-C",@"Swift",@"Java"];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -36,6 +36,23 @@
 
 - (IBAction)generate:(id)sender {
 //    NSLog(@"%@",_classNameField.stringValue);
+    
+    if (_classNameField.stringValue.length == 0) {
+        NSAlert *alert = [[NSAlert alloc]init];
+        alert.messageText = @"请输入要生成的类名";
+        [alert addButtonWithTitle:@"好的"];
+        alert.alertStyle = NSWarningAlertStyle;
+        [alert runModal];
+        return;
+    }
+    if (generater.language == Unknow) {
+        NSAlert *alert = [[NSAlert alloc]init];
+        alert.messageText = @"请选择语言";
+        [alert addButtonWithTitle:@"好的"];
+        alert.alertStyle = NSWarningAlertStyle;
+        [alert runModal];
+        return;
+    }
     generater.className = _classNameField.stringValue;
     NSError *error = nil;
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[_jsonTextView.textStorage.string dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
@@ -75,7 +92,9 @@
 }
 
 - (IBAction)selectedLanguage:(NSComboBox*)sender {
-    generater.language = sender.indexOfSelectedItem;
+    if (sender.indexOfSelectedItem < languageArray.count) {
+        generater.language = sender.indexOfSelectedItem;
+    }
 }
 
 - (void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender
@@ -95,6 +114,8 @@
         name = [name stringByAppendingString:@"*"];
     }
     result = name;
+//    NSLog(@"%@",result);
+
 }
 
 #pragma NSComboBoxDelegate & NSComboBoxDataSource
