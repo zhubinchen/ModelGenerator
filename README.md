@@ -9,7 +9,7 @@
 
 下面是运行截图
 
-<img src="screenshot.gif" width="1000" height="290"/>
+<img src="screenshot.gif" width="1000" height="400"/>
                
 ## How to install and use?
               
