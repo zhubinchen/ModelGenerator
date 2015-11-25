@@ -35,7 +35,7 @@ static ModelGenerator *generator = nil;
         generator = [[ModelGenerator alloc]init];
         generator.language = Unknow;
         generator.objcTypeArray = @[@"NSString*",@"NSInteger",@"CGFloat",@"NSInteger",@"CGFloat",@"BOOL",@"NSArray*"];
-        generator.swiftTypeArray = @[@"NSString",@"NSInteger",@"CGFloat",@"NSInteger",@"CGFloat",@"BOOL",@"NSArray"];
+        generator.swiftTypeArray = @[@"String",@"Int",@"Float",@"Double",@"Double",@"BOOL",@"NSArray"];
         generator.javaTypeArray = @[@"String",@"Int",@"Float",@"Double",@"Double",@"Boolean",@"ArrayList<Object>"];
     });
     return generator;
@@ -177,7 +177,7 @@ static ModelGenerator *generator = nil;
         }
         
     }
-//    {"registPhone":"15652684654","area":{"county":"CHN","province":"Beijing","city":"Beijing","code":0},"serverSerialNo":3.14,"password":"zbc123456","nickName":"zhubch","phoneModel":"iPhone Simulator","registerTime":"null","country":"null","updateTime":"null","phoneOs":"iPhone OS","osVersion":8.4,"serialNo":1}
+    
     destChar[n] = '\0';
     NSString *destStr = [[NSString alloc]initWithUTF8String:destChar];
     

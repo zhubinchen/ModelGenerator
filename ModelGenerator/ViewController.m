@@ -10,7 +10,7 @@
 #import "ModelGenerator.h"
 #import "ResolveClassViewController.h"
 
-@interface ViewController ()<ResolveClassViewControllerDelegate,NSComboBoxDataSource>
+@interface ViewController ()<ResolveClassViewControllerDelegate,NSComboBoxDataSource,NSTextViewDelegate>
 
 @end
 
@@ -36,7 +36,14 @@
 
 - (IBAction)generate:(id)sender {
 //    NSLog(@"%@",_classNameField.stringValue);
-    
+    if (self.jsonTextView.textStorage.string.length == 0) {
+        NSAlert *alert = [[NSAlert alloc]init];
+        alert.messageText = @"请先输入要转换的Json文本";
+        [alert addButtonWithTitle:@"好的"];
+        alert.alertStyle = NSWarningAlertStyle;
+        [alert runModal];
+        return;
+    }
     if (_classNameField.stringValue.length == 0) {
         NSAlert *alert = [[NSAlert alloc]init];
         alert.messageText = @"请输入要生成的类名";
@@ -58,7 +65,7 @@
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[_jsonTextView.textStorage.string dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
     if (error) {
         NSAlert *alert = [[NSAlert alloc]init];
-        alert.messageText = error.localizedFailureReason;
+        alert.messageText = @"什么乱七八糟的Json，根本解析不了";
         [alert addButtonWithTitle:@"好的"];
         alert.alertStyle = NSWarningAlertStyle;
         [alert runModal];
@@ -106,7 +113,16 @@
     }
 }
 
-#pragma ResolveClassViewControllerDelegate
+#pragma mark NSTextViewDelegate
+
+- (BOOL)textView:(NSTextView *)textView shouldChangeTextInRanges:(NSArray<NSValue *> *)affectedRanges replacementStrings:(nullable NSArray<NSString *> *)replacementStrings{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        _placeHolder.hidden = textView.textStorage.string.length > 0;
+    });
+    return YES;
+}
+
+#pragma mark ResolveClassViewControllerDelegate
 
 - (void)didResolvedWithClassName:(NSString *)name
 {
@@ -115,10 +131,9 @@
     }
     result = name;
 //    NSLog(@"%@",result);
-
 }
 
-#pragma NSComboBoxDelegate & NSComboBoxDataSource
+#pragma mark NSComboBoxDelegate & NSComboBoxDataSource
 
 - (NSInteger)numberOfItemsInComboBox:(NSComboBox *)aComboBox
 {

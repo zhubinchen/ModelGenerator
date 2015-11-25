@@ -12,7 +12,7 @@
 #define kObjcClassFormat @"@interface %@ : NSObject\n%@\n@end"
 #define kObjcPropertyFormat @"\n@property (nonatomic,%@) %@ %@;\n"
 
-#define kSwiftClassFormat @"class %@: NSObject {\n%@\n}"
+#define kSwiftClassFormat @"class %@ {\n%@\n}"
 #define kSwiftPropertyFormat @"\n\tvar %@: %@?\n"
 
 #define kJavaClassFormat @"public class %@ {\n%@%@\n}"

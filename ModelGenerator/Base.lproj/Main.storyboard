@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9059"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -54,26 +54,48 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Window" id="aUF-d1-5bR">
+                            <menuItem title="Edit" id="aUF-d1-5bR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
+                                <menu key="submenu" title="Edit" systemMenu="window" id="Td7-aD-5lo">
                                     <items>
-                                        <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV">
+                                        <menuItem title="Cut" keyEquivalent="x" id="OY7-WF-poV">
                                             <connections>
-                                                <action selector="performMiniaturize:" target="Ady-hI-5gd" id="VwT-WD-YPe"/>
+                                                <action selector="cut:" target="Ady-hI-5gd" id="qy4-zv-UWT"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Zoom" id="R4o-n2-Eq4">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        <menuItem title="Copy" keyEquivalent="c" id="R4o-n2-Eq4">
                                             <connections>
-                                                <action selector="performZoom:" target="Ady-hI-5gd" id="DIl-cC-cCs"/>
+                                                <action selector="copy:" target="Ady-hI-5gd" id="afv-jM-1EZ"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
-                                        <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
+                                        <menuItem title="Paste" keyEquivalent="v" id="K9u-dA-wDV">
+                                            <connections>
+                                                <action selector="paste:" target="Ady-hI-5gd" id="PK6-ZA-c1K"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Window" id="dcQ-oy-Gu8">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Window" systemMenu="window" id="GYl-nY-RcA">
+                                    <items>
+                                        <menuItem title="Minimize" keyEquivalent="m" id="SBk-Ah-uzt">
+                                            <connections>
+                                                <action selector="performMiniaturize:" target="Ady-hI-5gd" id="Y9f-d8-iZx"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Zoom" id="WOZ-DA-Jra">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="arrangeInFront:" target="Ady-hI-5gd" id="DRN-fu-gQh"/>
+                                                <action selector="performZoom:" target="Ady-hI-5gd" id="FI8-Bb-1Ws"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="NdV-eg-9U3"/>
+                                        <menuItem title="Bring All to Front" id="SUh-Vo-kfG">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="arrangeInFront:" target="Ady-hI-5gd" id="UeI-5D-UTG"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -83,7 +105,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="daizi Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="ModelGenerator Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -106,7 +128,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="属性生成器" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="ModelGenerator" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="556" y="386" width="600" height="300"/>
@@ -134,29 +156,18 @@
                                     <rect key="frame" x="1" y="1" width="223" height="133"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="p7Q-IO-h2F">
+                                        <textView importsGraphics="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="p7Q-IO-h2F">
                                             <rect key="frame" x="0.0" y="0.0" width="223" height="295"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="minSize" width="283" height="251"/>
                                             <size key="maxSize" width="463" height="10000000"/>
-                                            <attributedString key="textStorage">
-                                                <fragment content="请输入">
-                                                    <attributes>
-                                                        <font key="NSFont" size="11" name="STHeitiSC-Light"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content="Json">
-                                                    <attributes>
-                                                        <font key="NSFont" metaFont="smallSystem"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <size key="minSize" width="283" height="251"/>
                                             <size key="maxSize" width="463" height="10000000"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="ndL-U1-xQ4"/>
+                                            </connections>
                                         </textView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -166,7 +177,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="V7Q-ck-oDV">
-                                    <rect key="frame" x="224" y="1" width="15" height="133"/>
+                                    <rect key="frame" x="284" y="1" width="15" height="251"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -188,7 +199,7 @@
                                     <rect key="frame" x="1" y="1" width="223" height="133"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Ysi-iN-v9F">
+                                        <textView editable="NO" importsGraphics="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="Ysi-iN-v9F">
                                             <rect key="frame" x="0.0" y="0.0" width="223" height="295"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -206,7 +217,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="wDe-d8-uPF">
-                                    <rect key="frame" x="224" y="1" width="15" height="133"/>
+                                    <rect key="frame" x="284" y="1" width="15" height="251"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -239,6 +250,18 @@
                                     <action selector="generate:" target="XfG-lQ-9wD" id="8fk-Eh-yZc"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FeE-ai-AHy">
+                                <rect key="frame" x="3" y="237" width="108" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="6bN-qU-lc2"/>
+                                    <constraint firstAttribute="height" constant="17" id="LEU-k0-0pp"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" allowsUndo="NO" sendsActionOnEndEditing="YES" placeholderString="请输入Json文本" id="VbS-w5-5W3">
+                                    <font key="font" size="12" name=".HelveticaNeueDeskInterface-Regular"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="VBm-Dc-THG" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="0GX-N3-c6v"/>
@@ -248,6 +271,8 @@
                             <constraint firstAttribute="bottom" secondItem="VBm-Dc-THG" secondAttribute="bottom" id="DuC-Cn-aLR"/>
                             <constraint firstItem="2RJ-6J-dX1" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="KgI-4X-o9x"/>
                             <constraint firstItem="1Sv-JQ-JLr" firstAttribute="leading" secondItem="376-EJ-hZ3" secondAttribute="trailing" constant="20" id="Ljw-uD-z0V"/>
+                            <constraint firstItem="FeE-ai-AHy" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="43" id="QIR-c7-nha"/>
+                            <constraint firstItem="FeE-ai-AHy" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="5" id="Zgn-fj-pvt"/>
                             <constraint firstItem="2RJ-6J-dX1" firstAttribute="bottom" secondItem="1Sv-JQ-JLr" secondAttribute="bottom" id="Zvt-bw-VzY"/>
                             <constraint firstItem="376-EJ-hZ3" firstAttribute="bottom" secondItem="1Sv-JQ-JLr" secondAttribute="bottom" id="byB-d9-fc2"/>
                             <constraint firstItem="VBm-Dc-THG" firstAttribute="top" secondItem="aPe-l8-THT" secondAttribute="top" id="mIr-pb-ETj"/>
@@ -261,6 +286,7 @@
                         <outlet property="classNameField" destination="1Sv-JQ-JLr" id="nwq-O3-2ae"/>
                         <outlet property="codeTextView" destination="Ysi-iN-v9F" id="iv0-al-lS6"/>
                         <outlet property="jsonTextView" destination="p7Q-IO-h2F" id="dDi-y8-vsf"/>
+                        <outlet property="placeHolder" destination="FeE-ai-AHy" id="J7X-v3-SfS"/>
                         <segue destination="twm-gx-gS2" kind="popover" identifier="showModal" popoverAnchorView="2RJ-6J-dX1" popoverBehavior="t" preferredEdge="maxY" id="hKU-Qi-656"/>
                     </connections>
                 </viewController>
@@ -300,7 +326,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="fOR-ux-u6a">
-                                    <rect key="frame" x="224" y="1" width="15" height="133"/>
+                                    <rect key="frame" x="232" y="1" width="15" height="227"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>

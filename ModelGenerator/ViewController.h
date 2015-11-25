@@ -14,6 +14,8 @@
 
 @property (unsafe_unretained) IBOutlet NSTextView *jsonTextView;
 
+@property (unsafe_unretained) IBOutlet NSTextField *placeHolder;
+
 @property (weak) IBOutlet NSTextField *classNameField;
 
 - (IBAction)generate:(id)sender;
