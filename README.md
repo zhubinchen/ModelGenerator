@@ -1,4 +1,4 @@
-# ModalGenerator
+# ModelGenerator
 ---
 
 ## What is this?
@@ -8,8 +8,7 @@
 > 目前支持3种语言`Objective-C`、`Swift`、`Java`
 
 下面是运行截图
-
-<img src="screenshot.gif" width="1000" height="400"/>
+![](screenshot.gif)
                
 ## How to install and use?
               
@@ -19,14 +18,15 @@
               
               
 ##Contact
-	* Email:zbc@zhubch.com
+* Email:zbc@zhubch.com
+* QQ:474135951
               
 ## License
               
-ModalGenerator is published under MIT License
+ModelGenerator is published under MIT License
+   	
    	
    	Copyright (c) 2015 zhubch
-	
     Permission is hereby granted, free of charge, to any person obtaining a copy of
     this software and associated documentation files (the "Software"), to deal in
     the Software without restriction, including without limitation the rights to use,
