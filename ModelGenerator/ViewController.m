@@ -28,6 +28,7 @@
     generater = [ModelGenerator sharedGenerator];
     
     languageArray = @[@"Objective-C",@"Swift",@"Java"];
+    [_jsonTextView becomeFirstResponder];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -65,7 +66,7 @@
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[_jsonTextView.textStorage.string dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
     if (error) {
         NSAlert *alert = [[NSAlert alloc]init];
-        alert.messageText = @"什么乱七八糟的Json，根本解析不了";
+        alert.messageText = @"无效的Json数据";
         [alert addButtonWithTitle:@"好的"];
         alert.alertStyle = NSWarningAlertStyle;
         [alert runModal];

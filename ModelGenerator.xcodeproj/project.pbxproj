@@ -8,32 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		075150C71B7B14BE0078138B /* ResolveClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 075150C61B7B14BE0078138B /* ResolveClassViewController.m */; };
-		0799BED01C06EFD700AEAAFA /* QMSimpleWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0799BECF1C06EFD700AEAAFA /* QMSimpleWindow.m */; };
 		07A304181B79B1DC00B0CA47 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A304171B79B1DC00B0CA47 /* AppDelegate.m */; };
 		07A3041A1B79B1DC00B0CA47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A304191B79B1DC00B0CA47 /* main.m */; };
 		07A3041D1B79B1DC00B0CA47 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A3041C1B79B1DC00B0CA47 /* ViewController.m */; };
 		07A3041F1B79B1DC00B0CA47 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07A3041E1B79B1DC00B0CA47 /* Images.xcassets */; };
 		07A304221B79B1DC00B0CA47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07A304201B79B1DC00B0CA47 /* Main.storyboard */; };
-		07A3042E1B79B1DC00B0CA47 /* ModelGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A3042D1B79B1DC00B0CA47 /* ModelGeneratorTests.m */; };
 		07A304391B79B1ED00B0CA47 /* ModelGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A304381B79B1ED00B0CA47 /* ModelGenerator.m */; };
+		07CE48BE1C5A04CD00DC2AFD /* ColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CE48BB1C5A04CD00DC2AFD /* ColorView.m */; };
+		07CE48BF1C5A04CD00DC2AFD /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CE48BD1C5A04CD00DC2AFD /* Window.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		07A304281B79B1DC00B0CA47 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 07A304091B79B1DC00B0CA47 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 07A304101B79B1DC00B0CA47;
-			remoteInfo = ModelGenerator;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		075150C51B7B14BE0078138B /* ResolveClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResolveClassViewController.h; sourceTree = "<group>"; };
 		075150C61B7B14BE0078138B /* ResolveClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResolveClassViewController.m; sourceTree = "<group>"; };
 		075150ED1B7C94070078138B /* Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Template.h; sourceTree = "<group>"; };
-		0799BECE1C06EFD700AEAAFA /* QMSimpleWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMSimpleWindow.h; sourceTree = "<group>"; };
-		0799BECF1C06EFD700AEAAFA /* QMSimpleWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMSimpleWindow.m; sourceTree = "<group>"; };
 		07A304111B79B1DC00B0CA47 /* ModelGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModelGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A304151B79B1DC00B0CA47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A304161B79B1DC00B0CA47 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -43,22 +31,16 @@
 		07A3041C1B79B1DC00B0CA47 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		07A3041E1B79B1DC00B0CA47 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		07A304211B79B1DC00B0CA47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		07A304271B79B1DC00B0CA47 /* ModelGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		07A3042C1B79B1DC00B0CA47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07A3042D1B79B1DC00B0CA47 /* ModelGeneratorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelGeneratorTests.m; sourceTree = "<group>"; };
 		07A304371B79B1ED00B0CA47 /* ModelGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelGenerator.h; sourceTree = "<group>"; };
 		07A304381B79B1ED00B0CA47 /* ModelGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelGenerator.m; sourceTree = "<group>"; };
+		07CE48BA1C5A04CD00DC2AFD /* ColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorView.h; sourceTree = "<group>"; };
+		07CE48BB1C5A04CD00DC2AFD /* ColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorView.m; sourceTree = "<group>"; };
+		07CE48BC1C5A04CD00DC2AFD /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
+		07CE48BD1C5A04CD00DC2AFD /* Window.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Window.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		07A3040E1B79B1DC00B0CA47 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07A304241B79B1DC00B0CA47 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				07A304131B79B1DC00B0CA47 /* ModelGenerator */,
-				07A3042A1B79B1DC00B0CA47 /* ModelGeneratorTests */,
 				07A304121B79B1DC00B0CA47 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,7 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				07A304111B79B1DC00B0CA47 /* ModelGenerator.app */,
-				07A304271B79B1DC00B0CA47 /* ModelGeneratorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,8 +77,10 @@
 				07A3041C1B79B1DC00B0CA47 /* ViewController.m */,
 				075150C51B7B14BE0078138B /* ResolveClassViewController.h */,
 				075150C61B7B14BE0078138B /* ResolveClassViewController.m */,
-				0799BECE1C06EFD700AEAAFA /* QMSimpleWindow.h */,
-				0799BECF1C06EFD700AEAAFA /* QMSimpleWindow.m */,
+				07CE48BA1C5A04CD00DC2AFD /* ColorView.h */,
+				07CE48BB1C5A04CD00DC2AFD /* ColorView.m */,
+				07CE48BC1C5A04CD00DC2AFD /* Window.h */,
+				07CE48BD1C5A04CD00DC2AFD /* Window.m */,
 				075150ED1B7C94070078138B /* Template.h */,
 				07A3041E1B79B1DC00B0CA47 /* Images.xcassets */,
 				07A304201B79B1DC00B0CA47 /* Main.storyboard */,
@@ -112,23 +94,6 @@
 			children = (
 				07A304151B79B1DC00B0CA47 /* Info.plist */,
 				07A304191B79B1DC00B0CA47 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		07A3042A1B79B1DC00B0CA47 /* ModelGeneratorTests */ = {
-			isa = PBXGroup;
-			children = (
-				07A3042D1B79B1DC00B0CA47 /* ModelGeneratorTests.m */,
-				07A3042B1B79B1DC00B0CA47 /* Supporting Files */,
-			);
-			path = ModelGeneratorTests;
-			sourceTree = "<group>";
-		};
-		07A3042B1B79B1DC00B0CA47 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				07A3042C1B79B1DC00B0CA47 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -153,24 +118,6 @@
 			productReference = 07A304111B79B1DC00B0CA47 /* ModelGenerator.app */;
 			productType = "com.apple.product-type.application";
 		};
-		07A304261B79B1DC00B0CA47 /* ModelGeneratorTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 07A304341B79B1DC00B0CA47 /* Build configuration list for PBXNativeTarget "ModelGeneratorTests" */;
-			buildPhases = (
-				07A304231B79B1DC00B0CA47 /* Sources */,
-				07A304241B79B1DC00B0CA47 /* Frameworks */,
-				07A304251B79B1DC00B0CA47 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				07A304291B79B1DC00B0CA47 /* PBXTargetDependency */,
-			);
-			name = ModelGeneratorTests;
-			productName = ModelGeneratorTests;
-			productReference = 07A304271B79B1DC00B0CA47 /* ModelGeneratorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -182,10 +129,6 @@
 				TargetAttributes = {
 					07A304101B79B1DC00B0CA47 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					07A304261B79B1DC00B0CA47 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 07A304101B79B1DC00B0CA47;
 					};
 				};
 			};
@@ -203,7 +146,6 @@
 			projectRoot = "";
 			targets = (
 				07A304101B79B1DC00B0CA47 /* ModelGenerator */,
-				07A304261B79B1DC00B0CA47 /* ModelGeneratorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -218,13 +160,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		07A304251B79B1DC00B0CA47 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -235,29 +170,14 @@
 				07A3041D1B79B1DC00B0CA47 /* ViewController.m in Sources */,
 				07A3041A1B79B1DC00B0CA47 /* main.m in Sources */,
 				07A304181B79B1DC00B0CA47 /* AppDelegate.m in Sources */,
+				07CE48BF1C5A04CD00DC2AFD /* Window.m in Sources */,
 				07A304391B79B1ED00B0CA47 /* ModelGenerator.m in Sources */,
+				07CE48BE1C5A04CD00DC2AFD /* ColorView.m in Sources */,
 				075150C71B7B14BE0078138B /* ResolveClassViewController.m in Sources */,
-				0799BED01C06EFD700AEAAFA /* QMSimpleWindow.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07A304231B79B1DC00B0CA47 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				07A3042E1B79B1DC00B0CA47 /* ModelGeneratorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		07A304291B79B1DC00B0CA47 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 07A304101B79B1DC00B0CA47 /* ModelGenerator */;
-			targetProxy = 07A304281B79B1DC00B0CA47 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		07A304201B79B1DC00B0CA47 /* Main.storyboard */ = {
@@ -375,44 +295,6 @@
 			};
 			name = Release;
 		};
-		07A304351B79B1DC00B0CA47 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ModelGeneratorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "zhubch.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModelGenerator.app/Contents/MacOS/ModelGenerator";
-			};
-			name = Debug;
-		};
-		07A304361B79B1DC00B0CA47 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ModelGeneratorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "zhubch.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModelGenerator.app/Contents/MacOS/ModelGenerator";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -430,15 +312,6 @@
 			buildConfigurations = (
 				07A304321B79B1DC00B0CA47 /* Debug */,
 				07A304331B79B1DC00B0CA47 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		07A304341B79B1DC00B0CA47 /* Build configuration list for PBXNativeTarget "ModelGeneratorTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				07A304351B79B1DC00B0CA47 /* Debug */,
-				07A304361B79B1DC00B0CA47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
