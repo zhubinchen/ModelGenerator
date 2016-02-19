@@ -9,7 +9,7 @@ ModelGenerator
 
 下面是运行截图
 
-![](Screenshot.gif)
+![](screenshot.gif)
                
 ## 安装使用
     
