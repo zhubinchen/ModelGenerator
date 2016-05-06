@@ -58,7 +58,7 @@
         [containerView addSubview:headerView positioned:NSWindowBelow relativeTo:nil];
         
         [self setOpaque:YES];
-        [self setBackgroundColor:[NSColor colorWithRed:70/255.0 green:70/255.0 blue:70/255.0 alpha:1]];
+        [self setBackgroundColor:[NSColor colorWithRed:10/255.0 green:142/255.0 blue:237/255.0 alpha:1]];
         [self setMovableByWindowBackground:YES];
     }
     return self;

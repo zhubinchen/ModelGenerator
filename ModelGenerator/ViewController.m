@@ -25,10 +25,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.preferredContentSize = CGSizeMake(700, 400);
-    generater = [ModelGenerator sharedGenerator];
     
     languageArray = @[@"Objective-C",@"Swift",@"Java"];
+    generater = [ModelGenerator sharedGenerator];
+    
     [_jsonTextView becomeFirstResponder];
+    
+
+    _comboBox.placeholderAttributedString = [[NSAttributedString alloc]initWithString:@"Language" attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:14],NSForegroundColorAttributeName:[NSColor disabledControlTextColor]}];
+    _classNameField.placeholderAttributedString = [[NSAttributedString alloc]initWithString:@"ClassName" attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:14],NSForegroundColorAttributeName:[NSColor disabledControlTextColor]}];
+    _startBtn.attributedTitle = [[NSAttributedString alloc]initWithString:@"Start" attributes:@{NSFontAttributeName: [NSFont fontWithName:@"Times New Roman" size:16],NSForegroundColorAttributeName:[NSColor whiteColor]}];
+    _comboBox.stringValue = @"Objective-C";
+    generater.language = ObjectiveC;
+    [self makeRound:_comboBox];
+    [self makeRound:_classNameField];
+    [self makeRound:_startBtn];
+}
+
+- (void)makeRound:(NSView*)view{
+    view.layer.masksToBounds = YES;
+    view.layer.cornerRadius = 10;
+    view.layer.borderWidth = 5;
+    view.layer.borderColor = [NSColor whiteColor].CGColor;
 }
 
 - (void)setRepresentedObject:(id)representedObject {

@@ -18,6 +18,10 @@
 
 @property (weak) IBOutlet NSTextField *classNameField;
 
+@property (weak) IBOutlet NSComboBox *comboBox;
+
+@property (weak) IBOutlet NSButton *startBtn;
+
 - (IBAction)generate:(id)sender;
 
 - (IBAction)selectedLanguage:(id)sender;

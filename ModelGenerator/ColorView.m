@@ -46,7 +46,7 @@
         textColor = [NSColor whiteColor];
     
     NSAttributedString *title = [[NSAttributedString alloc] initWithString:self.window.title
-                                                                attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:13.0],
+                                                                attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:18.0],
                                                                              NSForegroundColorAttributeName: textColor}];
     
     [title drawAtPoint:NSMakePoint(NSMidX(bounds)-title.size.width/2, NSMidY(bounds)-title.size.height/2)];

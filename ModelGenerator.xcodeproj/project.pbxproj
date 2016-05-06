@@ -22,6 +22,7 @@
 		075150C51B7B14BE0078138B /* ResolveClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResolveClassViewController.h; sourceTree = "<group>"; };
 		075150C61B7B14BE0078138B /* ResolveClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResolveClassViewController.m; sourceTree = "<group>"; };
 		075150ED1B7C94070078138B /* Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Template.h; sourceTree = "<group>"; };
+		07853DC71CDC6CDD007A5F3A /* ModelGenerator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ModelGenerator.entitlements; sourceTree = "<group>"; };
 		07A304111B79B1DC00B0CA47 /* ModelGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModelGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A304151B79B1DC00B0CA47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A304161B79B1DC00B0CA47 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		07A304131B79B1DC00B0CA47 /* ModelGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				07853DC71CDC6CDD007A5F3A /* ModelGenerator.entitlements */,
 				07A304161B79B1DC00B0CA47 /* AppDelegate.h */,
 				07A304171B79B1DC00B0CA47 /* AppDelegate.m */,
 				07A304371B79B1ED00B0CA47 /* ModelGenerator.h */,
@@ -129,6 +131,11 @@
 				TargetAttributes = {
 					07A304101B79B1DC00B0CA47 = {
 						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -275,6 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ModelGenerator/ModelGenerator.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ModelGenerator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -287,6 +295,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ModelGenerator/ModelGenerator.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ModelGenerator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
