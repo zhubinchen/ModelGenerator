@@ -1,14 +1,14 @@
 //
-//  ResolveClassViewController.m
+//  ClassViewController.m
 //  ModelGenerator
 //
 //  Created by zhubch on 15/8/12.
 //  Copyright (c) 2015年 zhubch. All rights reserved.
 //
 
-#import "ResolveClassViewController.h"
+#import "ClassViewController.h"
 
-@implementation ResolveClassViewController
+@implementation ClassViewController
 
 - (void)viewDidLoad
 {

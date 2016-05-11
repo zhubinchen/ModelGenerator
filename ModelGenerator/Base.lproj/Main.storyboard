@@ -54,6 +54,35 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="File" id="tOp-Rh-CCA">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="File" id="Won-o9-iaJ">
+                                    <items>
+                                        <menuItem title="New" alternate="YES" keyEquivalent="n" id="dQ7-ea-0nb">
+                                            <connections>
+                                                <action selector="newDocument:" target="Ady-hI-5gd" id="3DH-1Z-Z2Q"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Close" keyEquivalent="w" id="4iE-2H-byR">
+                                            <connections>
+                                                <action selector="performClose:" target="Ady-hI-5gd" id="k0O-sI-CFy"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="pRQ-9y-WTP"/>
+                                        <menuItem title="Page Setup…" keyEquivalent="P" id="4ED-ye-u7E">
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="runPageLayout:" target="Ady-hI-5gd" id="qSJ-mI-wvx"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Print…" keyEquivalent="p" id="fyx-Zp-762">
+                                            <connections>
+                                                <action selector="print:" target="Ady-hI-5gd" id="ZUJ-SB-5Gf"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Edit" id="aUF-d1-5bR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Edit" systemMenu="window" id="Td7-aD-5lo">
@@ -127,8 +156,8 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="ModelGenerator" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="Window">
+                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="MainWindowController" sceneMemberID="viewController">
+                    <window key="window" title="ModelGenerator" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="Window">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="556" y="386" width="600" height="300"/>
@@ -142,10 +171,10 @@
             </objects>
             <point key="canvasLocation" x="137" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="MainViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="297"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -208,8 +237,8 @@
                                     <outlet property="dataSource" destination="XfG-lQ-9wD" id="x3U-ql-Xoz"/>
                                 </connections>
                             </comboBox>
-                            <button verticalHuggingPriority="750" misplaced="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2RJ-6J-dX1">
-                                <rect key="frame" x="515" y="268" width="65" height="18"/>
+                            <button verticalHuggingPriority="750" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2RJ-6J-dX1">
+                                <rect key="frame" x="515" y="267" width="65" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="8St-Nv-748"/>
                                     <constraint firstAttribute="height" constant="20" id="PRm-Xe-lGb"/>
@@ -314,10 +343,10 @@
             </objects>
             <point key="canvasLocation" x="137" y="669.5"/>
         </scene>
-        <!--Resolve Class View Controller-->
+        <!--Class View Controller-->
         <scene sceneID="Bm8-w6-aBz">
             <objects>
-                <viewController showSeguePresentationStyle="single" id="twm-gx-gS2" customClass="ResolveClassViewController" sceneMemberID="viewController">
+                <viewController showSeguePresentationStyle="single" id="twm-gx-gS2" customClass="ClassViewController" sceneMemberID="viewController">
                     <view key="view" id="DuC-HG-AX7">
                         <rect key="frame" x="0.0" y="0.0" width="248" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -351,7 +380,7 @@
                                 </scroller>
                             </scrollView>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FGn-lD-mF4">
-                                <rect key="frame" x="6" y="237" width="181" height="25"/>
+                                <rect key="frame" x="6" y="237" width="189" height="25"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="输入下面的属性对应的类名" drawsBackground="YES" id="31y-Yk-xIZ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -359,14 +388,14 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I8G-rS-2DU">
-                                <rect key="frame" x="189" y="230" width="65" height="36"/>
+                                <rect key="frame" x="203" y="236" width="40" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="53" id="CPh-NB-uan"/>
+                                    <constraint firstAttribute="width" constant="40" id="CPh-NB-uan"/>
                                     <constraint firstAttribute="height" constant="25" id="g3D-Pa-qMe"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ufb-si-K8E">
+                                <buttonCell key="cell" type="roundRect" title="OK" bezelStyle="roundedRect" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ufb-si-K8E">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="cellTitle"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
@@ -378,7 +407,7 @@ DQ
                         </subviews>
                         <constraints>
                             <constraint firstItem="CuC-1N-7O8" firstAttribute="top" secondItem="I8G-rS-2DU" secondAttribute="bottom" constant="8" id="3ZV-l8-gHG"/>
-                            <constraint firstAttribute="trailing" secondItem="I8G-rS-2DU" secondAttribute="trailing" id="4rC-4g-SfR"/>
+                            <constraint firstAttribute="trailing" secondItem="I8G-rS-2DU" secondAttribute="trailing" constant="5" id="4rC-4g-SfR"/>
                             <constraint firstItem="I8G-rS-2DU" firstAttribute="bottom" secondItem="FGn-lD-mF4" secondAttribute="bottom" id="6uC-QF-UR1"/>
                             <constraint firstAttribute="bottom" secondItem="CuC-1N-7O8" secondAttribute="bottom" id="M3k-2p-B6C"/>
                             <constraint firstAttribute="trailing" secondItem="CuC-1N-7O8" secondAttribute="trailing" id="OR6-3w-muT"/>

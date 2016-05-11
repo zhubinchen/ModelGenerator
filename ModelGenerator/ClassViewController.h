@@ -1,5 +1,5 @@
 //
-//  ResolveClassViewController.h
+//  ClassViewController.h
 //  ModelGenerator
 //
 //  Created by zhubch on 15/8/12.
@@ -8,15 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 
-@protocol ResolveClassViewControllerDelegate <NSObject>
+@protocol ClassViewControllerDelegate <NSObject>
 
 - (void)didResolvedWithClassName:(NSString*)name;
 
 @end
 
-@interface ResolveClassViewController : NSViewController
+@interface ClassViewController : NSViewController
 
-@property (nonatomic,weak) id<ResolveClassViewControllerDelegate> delegate;
+@property (nonatomic,weak) id<ClassViewControllerDelegate> delegate;
 
 @property (nonatomic,strong) id objectToResolve;
 

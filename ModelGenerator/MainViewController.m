@@ -1,20 +1,20 @@
 //
-//  ViewController.m
+//  MainViewController.m
 //  ModelGenerator
 //
 //  Created by zhubch on 15/8/11.
 //  Copyright (c) 2015年 zhubch. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 #import "ModelGenerator.h"
-#import "ResolveClassViewController.h"
+#import "ClassViewController.h"
 
-@interface ViewController ()<ResolveClassViewControllerDelegate,NSComboBoxDataSource,NSTextViewDelegate>
+@interface MainViewController ()<ClassViewControllerDelegate,NSComboBoxDataSource,NSTextViewDelegate>
 
 @end
 
-@implementation ViewController
+@implementation MainViewController
 {
     ModelGenerator *generater;
     id objectToResolve;
@@ -126,7 +126,7 @@
 - (void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"showModal"]) {
-        ResolveClassViewController *vc = segue.destinationController;
+        ClassViewController *vc = segue.destinationController;
         vc.objectToResolve = objectToResolve;
         vc.delegate = self;
     }
@@ -141,7 +141,7 @@
     return YES;
 }
 
-#pragma mark ResolveClassViewControllerDelegate
+#pragma mark ClassViewControllerDelegate
 
 - (void)didResolvedWithClassName:(NSString *)name
 {

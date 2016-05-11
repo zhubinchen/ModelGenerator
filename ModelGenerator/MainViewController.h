@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  ModelGenerator
 //
 //  Created by zhubch on 15/8/11.
@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController 
+@interface MainViewController : NSViewController
 
 @property (unsafe_unretained) IBOutlet NSTextView *codeTextView;
 
